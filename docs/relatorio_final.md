@@ -33,9 +33,12 @@
 
 ## BASE DE DADOS
 
-Para a realização deste trabalho foi decidido a utilização da base de dados “Data for Admission in the University”. Esta base de dados fornece informações sobre diversos alunos, como: GRE Scores, TOEFL score, university rating, etc; além da chance que eles possuem de serem admitidos nas universidades. Ela possui 400 dados de diferentes alunos.
+Para a realização deste trabalho foi decidido a utilização da base de dados “Data for Admission in the University”. Esta base de dados fornece informações sobre diversos alunos, como: GRE Scores,  TOEFL score, university rating, etc; além da chance que eles possuem de serem admitidos nas universidades. Ela possui 400 dados de diferentes alunos.
 
 ### Dicionário de dados
+
+A tabela original apresenta um total de 9 dados, sendo eles: Serial Number,GRE score, TOEFL score, University Rating, SOP, LOR, CGPA, Research e Chance of Admit.
+
 
 | Coluna/Atributo   | Tipo de dado           | Descrição |
 |-------------------|------------------------|-----------|
@@ -56,7 +59,7 @@ Após uma análise dos atributos presentes na tabela foi-se considerado desneces
 ### Resultado
 
 Tendo sido feita a redução de atributos a base de dados fica desta forma:
-![Imagem 1 - Tabela de dados](https://raw.githubusercontent.com/AHChaves/Trabalho-ISI/main/assets/results/foto%20tabela.png)
+![Imagem 1 - Tabela de dados](../assets/results/foto%20tabela.png)
 
 Fonte: tabela modificada pelos autores
 
@@ -70,6 +73,8 @@ Tendo como exemplo um aluno que teve seu CGPA baixo, um dado que não poderia se
 
 Uma análise estatística da tabela se torna necessária para podermos tirar conclusões sobre a mesma. Esta análise seria feita por meio das médias, medianas, e modas dos atributos, esses valores são obtidos pela utilização de um código em python.
 
+Tabela 1 - Análise da média, mediana, moda, valores máximos e mínimos dos atributos da base de dados
+
 | Coluna/Atributo   | Média  | Mediana | Moda     | Máx  | Min  |
 |-------------------|--------|---------|----------|------|------|
 | GRE score         | 316.8  | 317     | 312; 324 | 340  | 290  |
@@ -82,13 +87,17 @@ Uma análise estatística da tabela se torna necessária para podermos tirar con
 
 Fonte: elaborada pelos autores
 
-Com uma análise da tabela é possível notar uma separação muito grande entre os valores mínimos e máximos dos atributos, além de valores de média e mediana sempre muito próximos.
+Com uma análise da tabela é possível notar uma separação muito grande entre os valores mínimos e máximos dos atributos, além de valores de média e mediana sempre muito próximos. 
 
 Para podermos analisar ainda mais a fundo os valores obtidos foi feita uma separação dos dados pela mediana e faixa de valores de alguns deles, resultando em algumas categorias de dados, sendo elas: pessoas com a chance de admissão maior que 90%, pessoas que tiveram o TOEFL acima e abaixo da mediana, pessoas com o CGPA abaixo e acima da mediana.
+
 
 ### Admissão maior que 90%
 
 A separação das pessoas que possuíam uma chance maior ou igual a 90% melhora a visualização de possíveis padrões em quem possui a maior chance de ser admitido em uma universidade, como por exemplo o fato de os valores de CGPA estarem todos acima de 9.16, ou o fato da moda do GRE para essa faixa de valores ser igual a 340.
+
+Tabela 2 - Análise da média, da mediana, moda, valores máximos e mínimos dos atributos das pessoas que tiveram uma chance de admissão >= 90%
+
 
 | Coluna/Atributo   | Média  | Mediana | Moda     | Máx  | Min  |
 |-------------------|--------|---------|----------|------|------|
@@ -103,12 +112,13 @@ Fonte: elaborada pelos autores
 
 ### TOEFL acima e abaixo da mediana
 
-Separar os dados de acordo com a mediana dos atributos nos permite verificar quais são as características de pessoas com os melhores e os piores resultados.
+Através da separação da base entre pessoas que a nota do TOEFL estava abaixo ou acima do valor da mediana do mesmo atributo pode nos dar uma ideia do quão importante é ter um inglês bem desenvolvido.
 
 #### Acima da mediana
 
-Com a separação dos dados pelo valor da mediana de TOEFL, conseguimos observar que as pessoas que obtiveram uma nota acima da mediana possuem também uma nota de GRE superior a média.
+Após a separação dos dados e da aplicação de métodos de estatística podemos notar alguns fatos sobre as pessoas que tiveram uma nota acima da mediana, sendo eles: o aumento nos valores de quase todas as estatísticas em relação à tabela geral e que o valor da moda do GRE é a mesma da tabela geral, o que indica que a maioria dos dados tiveram o valor do TOEFL acima da mediana.
 
+Tabela 3 - Análise da média, da mediana, moda, valores máximos e mínimos dos atributos das pessoas que tiveram uma pontuação no TOEFL maior que o valor da mediana
 | Coluna/Atributo   | Média  | Mediana | Moda     | Máx  | Min  |
 |-------------------|--------|---------|----------|------|------|
 | GRE score         | 322.33 | 322     | 320      | 340  | 310  |
@@ -123,7 +133,9 @@ Fonte: elaborada pelos autores
 
 #### Abaixo da mediana
 
-Para aqueles alunos que não atingiram a mediana do TOEFL, podemos observar que suas chances de admissão são, em média, consideravelmente menores.
+Utilizando essa separação dos dados e a aplicação de métodos de estatística novamente, mudando apenas a faixa de valores para abaixo da mediana, obtemos os seguintes fatos: a diminuição dos valores de quase todas as estatísticas em relação à tabela geral e que todos os dados de mínimo são idênticos aos da tabela geral, revelando assim que todos as pessoas que tiveram os menores valores estão abaixo da mediana da pontuação do TOEFL.
+
+Tabela 4 - Análise da média, da mediana, moda, valores máximos e mínimos dos atributos das pessoas que tiveram uma pontuação no TOEFL abaixo do valor da mediana
 
 | Coluna/Atributo   | Média  | Mediana | Moda     | Máx  | Min  |
 |-------------------|--------|---------|----------|------|------|
@@ -139,9 +151,13 @@ Fonte: elaborada pelos autores
 
 ### CGPA acima ou abaixo da mediana
 
+Utilizando novamente a separação por meio da mediana, mudando apenas o atributo de referência para CGPA, poderemos notar padrões dos alunos que tinham boas notas durante suas graduações.
+
 #### Acima da mediana
 
-A tabela abaixo mostra que alunos com CGPA acima da mediana geralmente possuem uma pontuação TOEFL e GRE superior.
+Fazendo uso dessa separação, obtemos alguns fatos para as pessoas com valores de CGPA acima da mediana geral, sendo um deles a proximidade dos valores dessa tabela com os da tabela 3, indicando assim uma relação entre CGPA e TOEFL para os dados acima da mediana.
+
+Tabela 5 - Análise da média, da mediana, moda, valores máximos e mínimos dos atributos das pessoas que tiveram uma CGPA acima do valor da mediana
 
 | Coluna/Atributo   | Média  | Mediana | Moda     | Máx  | Min  |
 |-------------------|--------|---------|----------|------|------|
@@ -157,7 +173,9 @@ Fonte: elaborada pelos autores
 
 #### Abaixo da mediana
 
-Alunos com CGPA abaixo da mediana apresentam, em média, pontuações TOEFL e GRE menores.
+Recorrendo aos resultados da separação novamente, mudando apenas os valores alvos para abaixo da mediana, tivemos os seguintes fatos: a proximidade dos valores dessa tabela com os da tabela 4, indicando assim uma relação entre CGPA e TOEFL para os dados abaixo da mediana e o fato de todos os mínimos desta tabela condizem com os da tabela geral, mostrando que todos as pessoas que tiveram os menores valores estão abaixo da mediana de CGPA.
+
+Tabela 6 - Análise da média, da mediana, moda, valores máximos e mínimos dos atributos das pessoas que tiveram uma CGPA abaixo do valor da mediana
 
 | Coluna/Atributo   | Média  | Mediana | Moda     | Máx  | Min  |
 |-------------------|--------|---------|----------|------|------|
@@ -173,54 +191,71 @@ Fonte: elaborada pelos autores
 
 ## GRÁFICOS
 
-Os gráficos a seguir representam visualmente as correlações entre os atributos analisados e a chance de admissão dos alunos.
+Pela utilização do python como ferramenta de desenvolvimento de gráficos, foi possível a criação de gráficos que nos ajudam a visualizar relações entre as variáveis. 
 
 ### Gráfico geral
 
-![Gráfico Geral](../assets/results/Geral.png)
+Este gráfico nos possibilita a visualização das relações de todas as variáveis por meio de três tipos de gráficos diferentes, sendo eles: histograma, scatter, linha.
 
+Imagem 2 - Gráfico pairgrid(histograma, scatter, linha)
+![Gráfico Geral](../assets/results/Geral.png)
 Fonte: elaborado pelos autores
 
 ### Gráfico baseado em Chance of Admit
 
-Os gráficos a seguir representam a correlação entre Chance of Admit e os principais atributos analisados.
+Foi desenvolvido alguns gráficos que avaliam a chance de admissão de uma pessoa(que seria o eixo Y dos gráficos) com base em outros atributos(que seriam o eixo X), além de separar se essa pessoa já participou de uma pesquisa ou não.
 
 #### TOEFL
 
-![Gráfico TOEFL](#)
+Aqui analisamos a relação da chance de admissão com a pontuação do TOEFL.
+
+Imagem 3 - Chance of Admit X TOEFL Score, separados por Research
+![Gráfico TOEFL](../assets/results/caXtoeflXresearch.png)
 
 Fonte: elaborado pelos autores
 
 #### CGPA
 
-![Gráfico CGPA](#)
+Aqui analisamos a relação da chance de admissão com a pontuação do CGPA.
+
+Imagem 4 - Chance of Admit X CGPA, separados por Research
+![Gráfico CGPA](../assets/results/caXcgpaXresearch.png)
 
 Fonte: elaborado pelos autores
 
 #### GRE Score
 
-![Gráfico GRE Score](#)
+Aqui analisamos a relação da chance de admissão com a pontuação do GRE.
+
+Imagem 5 - Chance of Admit X GRE Score, separados por Research
+![Gráfico GRE Score](../assets/results/caXgreXresearch.png)
 
 Fonte: elaborado pelos autores
 
 ### Gráfico baseado no TOEFL
 
-Os gráficos abaixo mostram a correlação entre TOEFL e os principais atributos analisados.
+A criação de gráficos que avaliam a pontuação do TOEFL de uma pessoa(que seria o eixo Y dos gráficos) com base em outros atributos(que seriam o eixo X), além de separar se essa pessoa já participou de uma pesquisa ou não.
 
 #### CGPA
 
-![Gráfico CGPA - TOEFL](#)
+Aqui analisamos a relação da pontuação do TOEFL com a pontuação do CGPA.
+
+Imagem 6 - TOEFL Score X CGPA, separados por Research
+![Gráfico CGPA - TOEFL](../assets/results/toeflXcgpa.png)
 
 Fonte: elaborado pelos autores
 
 #### GRE Score
 
-![Gráfico GRE Score - TOEFL](#)
+Aqui analisamos a relação da pontuação do TOEFL com a pontuação do GRE.
+
+Imagem 7 - TOEFL Score X GRE Score, separados por Research
+![Gráfico GRE Score - TOEFL](../assets/results/toefl%20X%20gre.png)
 
 Fonte: elaborado pelos autores
 
 ## CONCLUSÃO
 
-Através da análise realizada, verificamos que os alunos que obtiveram as maiores chances de admissão em programas de mestrado possuíam notas elevadas nos exames TOEFL e GRE, além de um CGPA elevado. A qualidade das cartas de recomendação (LOR) e declarações de propósito (SOP) também se mostrou relevante, mas com impacto menor comparado aos exames e ao GPA.
+A análise detalhada da base de dados "Data for Admission in the University" permitiu identificar os principais fatores que influenciam a chance de um aluno ser admitido em um programa de mestrado. Através da divisão dos dados em categorias e da utilização de métodos estatísticos e gráficos, verificamos que as notas no GRE e TOEFL, o GPA, e a qualidade das cartas de recomendação e declarações de propósito são fatores cruciais para a admissão. Alunos com pontuações altas nesses critérios, especialmente acima da mediana, têm uma probabilidade significativamente maior de serem admitidos.
 
-Com isso, é recomendável que alunos interessados em programas de mestrado no exterior invistam fortemente na preparação para os exames TOEFL e GRE, e mantenham um alto desempenho acadêmico durante a graduação para maximizar suas chances de admissão.
+Concluímos que estudantes que desejam aumentar suas chances de admissão devem focar em melhorar suas pontuações no GRE e TOEFL e manter um alto GPA durante a graduação. Além disso, a participação em pesquisas e a obtenção de recomendações fortes podem compensar pontuações menores em outros critérios. Este estudo pode servir de guia para futuros candidatos ao mestrado, ajudando-os a direcionar seus esforços de preparação para maximizar suas chances de sucesso.
