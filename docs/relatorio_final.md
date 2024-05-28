@@ -59,6 +59,9 @@ Após uma análise dos atributos presentes na tabela foi-se considerado desneces
 ### Resultado
 
 Tendo sido feita a redução de atributos a base de dados fica desta forma:
+
+Imagem 1 - Tabela de dados
+
 ![Imagem 1 - Tabela de dados](../assets/results/foto%20tabela.png)
 
 Fonte: tabela modificada pelos autores
@@ -198,6 +201,7 @@ Pela utilização do python como ferramenta de desenvolvimento de gráficos, foi
 Este gráfico nos possibilita a visualização das relações de todas as variáveis por meio de três tipos de gráficos diferentes, sendo eles: histograma, scatter, linha.
 
 Imagem 2 - Gráfico pairgrid(histograma, scatter, linha)
+
 ![Gráfico Geral](../assets/results/Geral.png)
 Fonte: elaborado pelos autores
 
@@ -210,6 +214,7 @@ Foi desenvolvido alguns gráficos que avaliam a chance de admissão de uma pesso
 Aqui analisamos a relação da chance de admissão com a pontuação do TOEFL.
 
 Imagem 3 - Chance of Admit X TOEFL Score, separados por Research
+
 ![Gráfico TOEFL](../assets/results/caXtoeflXresearch.png)
 
 Fonte: elaborado pelos autores
@@ -219,6 +224,7 @@ Fonte: elaborado pelos autores
 Aqui analisamos a relação da chance de admissão com a pontuação do CGPA.
 
 Imagem 4 - Chance of Admit X CGPA, separados por Research
+
 ![Gráfico CGPA](../assets/results/caXcgpaXresearch.png)
 
 Fonte: elaborado pelos autores
@@ -228,6 +234,7 @@ Fonte: elaborado pelos autores
 Aqui analisamos a relação da chance de admissão com a pontuação do GRE.
 
 Imagem 5 - Chance of Admit X GRE Score, separados por Research
+
 ![Gráfico GRE Score](../assets/results/caXgreXresearch.png)
 
 Fonte: elaborado pelos autores
@@ -241,6 +248,7 @@ A criação de gráficos que avaliam a pontuação do TOEFL de uma pessoa(que se
 Aqui analisamos a relação da pontuação do TOEFL com a pontuação do CGPA.
 
 Imagem 6 - TOEFL Score X CGPA, separados por Research
+
 ![Gráfico CGPA - TOEFL](../assets/results/toeflXcgpa.png)
 
 Fonte: elaborado pelos autores
@@ -250,6 +258,7 @@ Fonte: elaborado pelos autores
 Aqui analisamos a relação da pontuação do TOEFL com a pontuação do GRE.
 
 Imagem 7 - TOEFL Score X GRE Score, separados por Research
+
 ![Gráfico GRE Score - TOEFL](../assets/results/toefl%20X%20gre.png)
 
 Fonte: elaborado pelos autores
